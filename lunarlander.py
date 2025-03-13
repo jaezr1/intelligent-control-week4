@@ -12,5 +12,5 @@ action_size = env.action_space.n
 agent = DQNAgent(state_size, action_size)
 
 # Latih agen
-agent.train(env, episodes=10, batch_size=64, target_update_freq=10)
+agent.train(env, episodes=1000, batch_size=64, target_update_freq=10)
 
