@@ -18,7 +18,7 @@ for e in range(5):
     state = env.reset()[0]  # Adjust for Gym v26+
     state = np.reshape(state, [1, state_size])
 
-    for time in range(500):
+    for time in range(1000):
         env.render()
         action = agent.act(state)
         next_state, reward, done, _, _ = env.step(action)
