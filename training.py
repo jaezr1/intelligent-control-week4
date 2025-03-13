@@ -61,12 +61,12 @@ class DQNAgent:
         if self.epsilon > self.epsilon_min:
             self.epsilon *= self.epsilon_decay
 
-    def train(self, env, episodes=10, batch_size=64, target_update_freq=10):
+    def train(self, env, episodes=1000, batch_size=64, target_update_freq=10):
         for e in range(episodes):
             state = env.reset()[0]  # Adjust for Gym v26+
             state = np.reshape(state, [1, self.state_size])
 
-            for time in range(100):
+            for time in range(1000):
                 action = self.act(state)
                 next_state, reward, done, _, _ = env.step(action)
                 next_state = np.reshape(next_state, [1, self.state_size])
